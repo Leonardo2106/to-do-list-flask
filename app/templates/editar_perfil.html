@@ -1,0 +1,44 @@
+{% extends "template.html"%}
+{% block conteudo%}
+
+<header>
+  <h1>To Do List</h1>
+  <nav class="menu-bar-perfil">
+    <a class="voltar" href="{{ url_for('perfil', nickname=usuario.nickname) }}">Voltar</a>
+    <a class="logout-deletar" href="{{ url_for('deletar_perfil', id=usuario.id) }}">Deletar Perfil</a>
+  </nav>
+</header>
+<main>
+  <form action="{{ url_for('atualizar_perfil') }}" method="post" enctype="multipart/form-data">
+    <div>
+      <input type="hidden" name="id" value="{{ usuario.id }}">
+      {{ form.hidden_tag() }}
+      <h1>Editar perfil</h1>
+      <div class="form-group inputBox">
+        {{ form.nome.label(class="form-label") }}
+        {{ form.nome(class="form-control") }}
+      </div>
+      <div class="form-group inputBox">
+        {{ form.nickname.label(class="form-label") }}
+        {{ form.nickname(class="form-control") }}
+      </div>
+      <div class="form-group inputBox">
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control") }}
+      </div>
+      <div class="form-group inputBox">
+        {{ form.senha.label(class="form-label") }}
+        {{ form.senha(class="form-control" , placeholder="Preencha apenas se quiser mudar a senha") }}
+      </div>
+      <div class="form-group inputBox">
+        {{ form.confirmar_senha.label(class="form-label") }}
+        {{ form.confirmar_senha(class="form-control" , placeholder="Preencha apenas se quiser mudar a senha") }}
+      </div>
+      <div class="form-buttons">
+        {{ form.salvar(class="btn-login-criar") }}
+      </div>
+    </div>
+  </form>
+</main>
+
+{% endblock %}

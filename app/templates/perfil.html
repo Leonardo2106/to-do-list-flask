@@ -1,0 +1,33 @@
+{% extends "template.html"%}
+{% block conteudo%}
+
+<header>
+  <h1>To Do List</h1>
+  <nav class="menu-bar-perfil">
+    <a class="voltar" href="{{ url_for('index') }}">Voltar</a>
+    <a class="logout-deletar" href="{{ url_for('logout') }}">Logout</a>
+  </nav>
+</header>
+<main>
+  <h1>Bem-vindo(a), {{ nickname }}!</h1><br>
+  <h2>Como podemos te ajudar?</h2>
+  <div class="container-blocks">
+    <div class="blocks">
+      <h2>Nova Tarefa</h2>
+      <p>Crie uma nova tarefa</p><br>
+      <a href="{{ url_for('criar_tarefa', nickname=usuario.nickname) }}">Nova tarefa</a>
+    </div>
+    <div class="blocks">
+      <h2>Ver Tarefas</h2>
+      <p>Vizualize todas as suas tarefas</p><br>
+      <a href="{{ url_for('tarefas', nickname=usuario.nickname) }}">Ver tarefas</a>
+    </div>
+    <div class="blocks">
+      <h2>Editar Perfil</h2>
+      <p>Edite o seu perfil</p><br>
+      <a href="{{ url_for('editar_perfil', nickname=usuario.nickname) }}">Editar Perfil</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

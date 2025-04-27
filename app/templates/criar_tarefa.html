@@ -1,0 +1,36 @@
+{% extends "template.html"%}
+{% block conteudo%}
+
+<header>
+    <h1>To Do List</h1>
+    <nav class="menu-bar">
+      <a href="{{ url_for('perfil', nickname=usuario.nickname) }}">Voltar</a>
+    </nav>
+</header>
+<main>
+    <h1>Criar Tarefa</h1>
+    <form class="nova-tarefa" enctype="multipart/form-data" method="post" action="{{ url_for('criar_tarefa', nickname=usuario.nickname) }}">
+        {{ form.csrf_token() }}
+        <div class="form-group">
+            {{ form.titulo.label(class="form-label") }}
+            {{ form.titulo(class="form-control", placeholder="Digite um titulo") }}
+        </div>
+        <div class="form-group">
+            {{ form.tarefa.label(class="form-label") }}
+            {{ form.tarefa(class="form-control-tarefa", placeholder="Descreva a tarefa. Máximo 3000 caracteres", rows="5", cols="40") }}
+        </div>
+        <div class="form-group">
+            {{ form.importante.label(class="form-label") }}
+            {{ form.importante(class="radio") }}
+        </div>
+        <div class="form-group">
+            {{ form.prazo.label(class="form-label") }}
+            {{ form.prazo(class="prazo") }}
+        </div>
+        <div class="form-buttons">
+            {{ form.criar(class="btn-login-criar") }}
+        </div>
+    </form>
+</main>
+
+{% endblock %}

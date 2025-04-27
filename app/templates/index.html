@@ -1,0 +1,53 @@
+{% extends "template.html"%}
+{% block conteudo%}
+
+<header>
+  <div>
+    <h1>To Do List</h1>
+    <nav class="menu-bar">
+      {% if usuario %}
+        <a href="{{ url_for('perfil', nickname=usuario.nickname) }}">Perfil</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+      {% endif %}
+      <a href="#">Ver Tarefas</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div>
+    <a href="#"><img src="" alt=""></a>
+  </div>
+  {% if usuario %}
+    <h1>Como podemos te ajudar, {{ nickname }}?</h1>
+    <div class="container-blocks">
+      <div class="blocks">
+        <h2>Nova Tarefa</h2>
+        <p>Crie uma nova tarefa</p><br>
+        <a href="{{ url_for('criar_tarefa', nickname=usuario.nickname) }}">Nova tarefa</a>
+      </div>
+      <div class="blocks">
+        <h2>Ver Tarefas</h2>
+        <p>Vizualize todas as suas tarefas</p><br>
+        <a href="{{ url_for('tarefas', nickname=usuario.nickname) }}">Ver tarefas</a>
+      </div>
+    </div>
+  {% else %}
+    <h1>Como podemos te ajudar?</h1>
+    <div class="container-blocks">
+      <div class="blocks">
+        <h2>Nova Tarefa</h2>
+        <p>Crie uma nova tarefa</p><br>
+        <a href="{{ url_for('login') }}">Faça Login</a>
+      </div>
+      <div class="blocks">
+        <h2>Ver Tarefas</h2>
+        <p>Vizualize todas as suas tarefas</p><br>
+        <a href="{{ url_for('login') }}">Faça Login</a>
+      </div>
+    </div>
+  {% endif %}
+</main>
+
+
+{% endblock %}

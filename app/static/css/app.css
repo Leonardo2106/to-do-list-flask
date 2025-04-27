@@ -1,0 +1,210 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+}
+header{
+    text-align: center;
+    border-bottom: black solid 0.10em;
+}
+.menu-bar{
+    display: flex;
+    justify-content: right;
+    margin-right: 5%;
+    gap: 1%;
+    margin-bottom: 1%;
+}
+.menu-bar-perfil{
+    display: flex;
+    justify-content: right;
+    margin-right: 5%;
+    gap: 1%;
+    margin-bottom: 1%;
+}
+.logout-deletar{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    padding: 0.5%;
+    border-radius: 0.25em;
+    background-color: #c13f3f;
+    transition: all ease 0.4s;
+}
+.voltar{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    padding: 0.5%;
+    border-radius: 0.25em;
+    background-color: cadetblue;
+    transition: all ease 0.4s;
+}
+.menu-bar a{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    padding: 0.5%;
+    border-radius: 0.25em;
+    background-color: cadetblue;
+    transition: all ease 0.4s;
+}
+.menu-bar a:hover{
+    background-color: #206365;
+    transition: all ease 0.4s;
+}
+main{
+    text-align: center;
+    flex: 1;
+}
+.container-blocks{
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+.blocks{
+    width: 8%;
+    border: solid #D5D5D5 0.2em;
+    border-radius: 0.5em;
+    padding: 1%;
+    transition: all ease 0.4s;
+}
+.blocks:hover{
+    transition: all ease 0.4s;
+    background-color: #E1E1E1;
+    border: solid cadetblue 0.2em;
+}
+.blocks a{
+    text-decoration: none;
+    font-size: 1.25em;
+    color: white;
+    padding: 5%;
+    border-radius: 0.25em;
+    background-color: cadetblue;
+    transition: all ease 0.4s;
+}
+.blocks p{
+    color: #9f9f9f;
+}
+.blocks a:hover{
+    background-color: #206365;
+    transition: all ease 0.4s;
+}
+.container-table-tarefas{
+    text-align: center;
+}
+.container-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    padding-bottom: 100px;
+    display: inline-block;
+    font-size: 1em;
+    min-width: 800px;
+}
+.container-table thead tr{
+    background-color: #206365;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.container-table th,
+.container-table td{
+    padding: 12px 15px;
+    max-width: 600px;
+    word-break: break-word;
+    text-align: left;
+}
+.container-table tbody tr{
+    border-bottom: 1px solid lightgray;
+}
+.container-table tbody tr:last-of-type{
+    border-bottom: 2px solid #206365;
+}
+.container-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.btn-editar{
+    background-color: #206365;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn-excluir{
+    background-color: darkred;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1%;
+    margin-bottom: 1%;
+}
+.form-label{
+    font-size: 1.5em;
+    text-align: left;
+}
+.form-control{
+    height: 2em;
+    font-size: 1.25em;
+    border: solid gray 0.10em;
+    width: 25%;
+    border-radius: 1em;
+    padding-left: 1em;
+}
+.form-control-tarefa{
+    font-family: Arial;
+    height: 15em;
+    vertical-align: top;
+    resize: vertical;
+    font-size: 1em;
+    border: solid gray 0.15em;
+    width: 25%;
+    border-radius: 1em;
+    padding: 1em;
+}
+.form-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+}
+
+.btn-login-criar{
+    text-decoration: none;
+    font-size: 1.25em;
+    color: white;
+    padding: 1%;
+    width: 10%;
+    border-radius: 0.25em;
+    background-color: cadetblue;
+    transition: all ease 0.4s;
+    border: none;
+    cursor: pointer;
+}
+.btn-login-criar:hover{
+    background-color: #206365;
+    transition: all ease 0.4s;
+}
+footer{
+    margin-top: 10%;
+    background-color: #00002b;
+    padding: 4%;
+    text-align: center;
+}
+footer a{
+    color: white;
+}

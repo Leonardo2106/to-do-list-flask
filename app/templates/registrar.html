@@ -1,0 +1,41 @@
+{% extends "template.html"%}
+{% block conteudo%}
+
+    <header>
+      <h1>To Do List</h1>
+      <nav class="menu-bar">
+        <a href="{{ url_for('index') }}">Voltar</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Login</h1>
+      <form class="registrar" enctype="multipart/form-data" method="post" action="{{ url_for('criar_conta') }}">
+          {{ form.csrf_token() }}
+          <div class="form-group">
+            {{ form.nome.label(class="form-label") }}
+            {{ form.nome(class="form-control", placeholder="Digite seu nome") }}
+          </div>
+           <div class="form-group">
+            {{ form.nickname.label(class="form-label") }}
+            {{ form.nickname(class="form-control", placeholder="Digite um apelido") }}
+          </div>
+          <div class="form-group">
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control", placeholder="Digite seu email") }}
+          </div>
+          <div class="form-group">
+            {{ form.senha.label(class="form-label") }}
+            {{ form.senha(class="form-control", placeholder="Crie uma senha") }}
+          </div>
+           <div class="form-group">
+            {{ form.confirmar_senha.label(class="form-label") }}
+            {{ form.confirmar_senha(class="form-control", placeholder="Confirme a senha") }}
+          </div>
+          <div class="form-buttons">
+            {{ form.criar(class="btn-login-criar") }}
+            <a class="btn-login-criar" href="{{ url_for('login') }}">Já possui conta?</a>
+          </div>
+      </form>
+    </main>
+
+{% endblock %}

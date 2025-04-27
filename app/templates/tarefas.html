@@ -1,0 +1,52 @@
+{% extends "template.html"%}
+{% block conteudo%}
+
+<header>
+    <h1>To Do List</h1>
+    <nav class="menu-bar">
+      <a href="{{ url_for('perfil', nickname=usuario.nickname) }}">Voltar</a>
+    </nav>
+</header>
+<main>
+    <div class="container-table-tarefas">
+    <table class="container-table">
+        {% if tarefas %}
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Tarefa</th>
+                    <th>Importante</th>
+                    <th>Data de Criação</th>
+                    <th>Prazo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tarefa in tarefas %}
+                    <tr>
+                        <td>{{ tarefa.titulo }}</td>
+                        <td>{{ tarefa.tarefa }}</td>
+                        <td>{{ tarefa.importante }}</td>
+                        <td>{{ tarefa.data_criacao }}</td>
+                        <td>{{ tarefa.prazo }}</td>
+                        <td class="container-btn">
+                            <a class="btn-editar" href="{{ url_for('editar_tarefa', nickname=usuario.nickname, id=tarefa.id) }}">Editar</a>
+                            <a class="btn-excluir" href="{{ url_for('deletar_tarefa', id=tarefa.id) }}">Deletar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        {% else %}
+            <tbody>
+                <tr>
+                    <td colspan="5">
+                        <h1>Nenhuma Tarefa cadastrada</h1>
+                    </td>
+                </tr>
+            </tbody>
+        {% endif %}
+    </table>
+    </div>
+    <a class="btn-login-criar" href="{{ url_for('criar_tarefa', nickname=usuario.nickname) }}">Criar tarefa</a>
+</main>
+
+{% endblock %}

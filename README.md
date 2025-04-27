@@ -47,6 +47,7 @@ git clone https://github.com/Leonardo2106/to-do-list-flask.git
 ```
 2) Crie um ambiente virtual
 ```bash
+cd to-do-list-flask
 python -m venv venv
 source venv/bin/activate # MacOS/Linux
 venv\Scripts\activate # Windows
@@ -70,7 +71,7 @@ SGBD=mysql+mysqlconnector       # Sistema de banco de dados
 
 5) você pode aproveitar o arquivo `database.py` para gerar o banco de dados e as tabelas
 ```bash
-cd to-do-list-flask
+cd to-do-list-flask # se ainda não tiver acessado o projeto
 python database.py
 ```
 - **Nota:** O arquivo `database.py` é utilizado para criar o banco de dados e as tabelas automaticamente. Você pode utilizar para gerar as tabelas e o banco após configurar as variáveis de ambiente no arquivo `.env`.
@@ -85,7 +86,7 @@ python run.py
  * Serving Flask app 'app'
  * Debug mode: on
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:5000 # <-- Link
 Press CTRL+C to quit
  * Restarting with stat
  * Debugger is active!

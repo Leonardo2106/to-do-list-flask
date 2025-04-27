@@ -91,6 +91,5 @@ Press CTRL+C to quit
  * Debugger is active!
 ```
 - Clique no link `http://127.0.0.1:5000` para acessar o site
+
 ---
-
-

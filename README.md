@@ -5,8 +5,8 @@ Um site **To Do List** simples para criação de tarefas com uma interface simpl
 
 **Funcionalidades**:  
 - **Usuários:** `Login` `Logout` `Registrar-se` `Editar conta` `Excluir conta`
-- **Tarefas** `Vizualizar tarefas` `Criar tarefas` `Editar tarefas` `Excluir Tarefas`
-- **Segurança** `Bcrypt`
+- **Tarefas:** `Vizualizar tarefas` `Criar tarefas` `Editar tarefas` `Excluir Tarefas`
+- **Segurança:** `Bcrypt`
 
 ---
 
